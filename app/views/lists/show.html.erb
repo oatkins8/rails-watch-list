@@ -3,7 +3,7 @@
     <h1>Check out <strong><%= @list.name %></strong>!</h1>
     <p text-center>Below are all the movies added to this list</p>
     <%= link_to '<button class="btn btn-flat">Add a Movie</button>'.html_safe, new_list_bookmark_path(@list) %>
-    <%= link_to '<button class="btn btn-flat">Back to all lists</button>'.html_safe, lists_path %> <%# need to raise a ticket here %>
+    <%= link_to '<button class="btn btn-flat">Back to all lists</button>'.html_safe, root_path %> <%# need to raise a ticket here %>
   </div>
 </div>
 
