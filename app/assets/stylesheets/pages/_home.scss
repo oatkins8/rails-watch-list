@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+h1 {
+  color: $light-blue;
+}
+
+a {
+  color: $light-blue;
+  &:hover {
+    color: $orange;
+  }
+}

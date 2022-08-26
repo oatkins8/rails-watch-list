@@ -6,8 +6,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> <%# links the stylesheet to the html  %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %> <%# don't need javaScript at the end - defer: true tells this line to load AFTER the html has loaded  %>
   </head>
 
   <body>

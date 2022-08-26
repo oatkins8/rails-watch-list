@@ -1,0 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://picsum.photos/200/300/?blur);">
+  <div class="container">
+    <h1>Check out <strong><%= @list.name %></strong>!</h1>
+    <p text-center>Below are all the movies added to this list</p>
+    <%= link_to '<button class="btn btn-flat">Add a Movie</button>'.html_safe, new_list_bookmark_path(@list) %>
+    <%= link_to '<button class="btn btn-flat">Back to all lists</button>'.html_safe, lists_path %> <%# need to raise a ticket here %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row m-5">
+    <div class="cards col">
+      <% @list.bookmarks.each do |bm| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= bm.movie.poster_url %>')">
+          <h2><%= bm.movie.title %></h2>
+          <p><%= bm.movie.overview %></p>
+          <p>Your thoughts on this movie <%= bm.comment %></p>
+          <%= link_to '<i class="fa-solid fa-trash-can"></i>'.html_safe, bookmark_path(bm), data: {turbo_method: :delete}, class: "card-remove-link" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
